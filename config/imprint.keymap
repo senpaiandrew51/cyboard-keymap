@@ -20,8 +20,8 @@
 &kp LCTRL  &kp A   &kp S     &kp D     &kp F     &kp G               &kp H      &kp J     &kp K      &kp L     &kp SEMI  &kp SQT
 &kp LSHFT  &kp Z   &kp X     &kp C     &kp V     &kp B               &kp N      &kp M     &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
 &trans     &trans  &kp LGUI  &kp LALT  &trans                                   &kp GRAVE &kp LBKT   &kp RBKT  &trans    &trans
-                                       &kp RET   &kp DEL  &kp CAPS   &kp LCLK  &kp BSPC  &kp SPACE
-                                       &kp LGUI  &mo 1    &mo 2      &kp RCLK   &mo 1     &mo 2
+                                       &kp RET   &kp DEL  &kp CAPS   &mkp LCLK  &kp BSPC  &kp SPACE
+                                       &mkp MCLK &mo 1    &mo 2      &mkp RCLK   &mo 1     &mo 2
             >;
         };
 
