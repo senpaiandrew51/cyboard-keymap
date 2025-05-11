@@ -51,14 +51,14 @@
             >;
         };
 
-        Auto_Mouse_Layer {
+        layer_3 {
             bindings = <
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans     &trans     &trans                               &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans      &trans       &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans      &trans       &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans      &trans       &trans  &trans
+&trans  &trans  &mkp RCLK  &mkp MCLK  &mkp LCLK  &trans            &trans  &trans  &scroll_cw  &scroll_ccw  &trans  &trans
+&trans  &trans  &trans     &trans     &trans     &trans            &trans  &trans  &trans      &trans       &trans  &trans
+&trans  &trans  &trans     &trans     &trans                               &trans  &trans      &trans       &trans  &trans
                                       &trans     &trans  &trans    &trans  &trans  &trans
                                       &trans     &trans  &trans    &trans  &trans  &trans
             >;
@@ -81,18 +81,17 @@
 
 // right hand trackball configuration
 
-// &trackball_peripheral_listener {
-//    input-processors =
-//     activate layer 3 within 500ms of the trackball moving
-//     <&zip_temp_layer 3 500>;
-// };
+&trackball_peripheral_listener {
+    input-processors =
+        <&zip_temp_layer 3 1000>;
+};
 
 //left hand trackball configuration
 
 &trackball_central_listener {
     input-processors =
         // multiply sensitivity by 1, divide by 3 (make it slower for scrolling),
-        <&zip_xy_scaler 1 3>,
+        <&zip_xy_scaler 1 10>,
         // make this trackball output scrolling events by default instead of cursor movement,
         <&zip_xy_to_scroll_mapper>,
         // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.,
